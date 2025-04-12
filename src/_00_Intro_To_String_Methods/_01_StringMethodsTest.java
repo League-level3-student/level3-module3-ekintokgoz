@@ -10,7 +10,7 @@ class _01_StringMethodsTest {
     void testLongerString() {
         assertEquals("A", _01_StringMethods.longerString("", "A"));
         assertEquals("A", _01_StringMethods.longerString("A", ""));
-        assertEquals("equal", _01_StringMethods.longerString("equal", "equal"));
+        assertEquals("equal", _01_StringMethods.longerString("equal", "dfalh"));
     }
 
     @Test

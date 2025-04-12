@@ -34,13 +34,26 @@ public class _01_StringMethods {
 
     // Given Strings s1 and s2, return the longer String
     public static String longerString(String s1, String s2) {
-        return null;
+        String longest = "";
+    	if(s1.length() > s2.length()) {
+        	longest = s1;
+        }
+    	else if(s2.length() > s1.length()) {
+        	longest = s2;
+        }else if (s2.length() == s1.length()) {
+        	longest = "equal";
+        }
+    	return longest;
     }
 
     // If String s contains the word "underscores", change all of the spaces
     // to underscores
     public static String formatSpaces(String s) {
-        return null;
+    	String replacedStr = s;
+    	if(s.contains("underscores")) {
+    		replacedStr = s.replace(" ", "_");
+        }
+    	return replacedStr;
     }
 
     // Return the name of the person whose LAST name would appear first if they
@@ -48,17 +61,49 @@ public class _01_StringMethods {
     // You cannot assume there are no extra spaces around the name, but you can
     // assume there is only one space between the first and last name
     public static String lineLeader(String s1, String s2, String s3) {
-        return null;
+        String first = "";
+        s1 = s1.trim();
+        s2 = s2.trim();
+        s3 = s3.trim();
+        String[] str1 = s1.split(" ");
+        String[] str2 = s2.split(" ");
+        String[] str3 = s3.split(" ");
+        if(str1[1].compareTo(str2[1]) > 0) {
+        	if(str3[1].compareTo(str2[1]) > 0) {
+        		first = s2;
+        	}else {
+        		first = s3;
+        	}
+        }else {
+        	if(str3[1].compareTo(str1[1]) > 0) {
+        		first = s1;
+        	}else {
+        		first = s3;
+        	}
+        }	 
+    	return first;
     }
 
     // Return the sum of all numerical digits in the String
     public static int numeralSum(String s) {
-        return 0;
+        int sum = 0;
+    	for(int i = 0; i < s.length(); i++) {
+        	if(Character.isDigit(s.charAt(i))) {
+        		sum += Integer.parseInt(s.charAt(i)+""); 		
+        	}
+        }
+    	return sum;
     }
 
     // Return the number of times String substring appears in String s
     public static int substringCount(String s, String substring) {
-        return 0;
+    	int numOccurances = 0;
+        int index = s.indexOf(substring);
+        while( index != -1 ) {
+            numOccurances++;
+            index = s.indexOf(substring, index + substring.length());
+        }
+        return numOccurances;
     }
 
     // Call Utilities.encrypt at the bottom of this file to encrypt String s
