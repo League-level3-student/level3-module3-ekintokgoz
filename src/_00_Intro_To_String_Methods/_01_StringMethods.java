@@ -108,33 +108,60 @@ public class _01_StringMethods {
 
     // Call Utilities.encrypt at the bottom of this file to encrypt String s
     public static String encrypt(String s, char key) {
-        return null;
+        String output = Utilities.encrypt(s.getBytes(), (byte)key);
+    	
+    	return output;
     }
 
     // Call Utilities.decrypt at the bottom of this file to decrypt the
     // cyphertext (encrypted text)
     public static String decrypt(String s, char key) {
-        return null;
+        String output = Utilities.decrypt(s, (byte)key);   	
+    	return output;
     }
 
     // Return the number of words in String s that end with String substring
     // You can assume there are no punctuation marks between words
     public static int wordsEndsWithSubstring(String s, String substring) {
-        return 0;
+    	int num = 0;
+    	String[] words = s.split(" "); 
+        for( int i = 0; i < words.length; i++ ) {
+        	if(words[i].endsWith(substring)) {
+        		num+=1;
+        	}
+        }
+    	return num;
     }
 
     // Given String s, return the number of characters between the first
     // occurrence of String substring and the final occurrence
     // You can assume that substring will appear at least twice
     public static int distance(String s, String substring) {
-        return 0;
+       int first = s.indexOf(substring);
+       int last = s.lastIndexOf(substring);
+       
+    	
+    	return last - (first + substring.length());
     }
 
     // Return true if String s is a palindrome
     // palindromes are words or phrases are read the same forward as backward.
     // HINT: ignore/remove all punctuation and spaces in the String
     public static boolean palindrome(String s) {
-        return true;
+    	String replacedS = s.replace(" ", "");
+    	for(int i = 0, j = replacedS.length() -1; i < j; i++,j--) {
+    		if(!Character.isLetterOrDigit(replacedS.charAt(i))) {
+    			i += 1;
+    		}if(!Character.isLetterOrDigit(replacedS.charAt(j))) {
+    			j -= 1;
+    		}if(j < i) {
+    			break;
+    		}else {
+    			
+    		}
+    	}
+    	
+    	return true;
     }
 }
 
