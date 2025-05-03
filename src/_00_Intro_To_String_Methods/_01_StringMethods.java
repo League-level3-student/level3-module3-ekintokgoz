@@ -157,7 +157,9 @@ public class _01_StringMethods {
     		}if(j < i) {
     			break;
     		}else {
-    			
+    			if(Character.toLowerCase(replacedS.charAt(i)) != Character.toLowerCase(replacedS.charAt(j))) {
+    				return false;
+    			}
     		}
     	}
     	

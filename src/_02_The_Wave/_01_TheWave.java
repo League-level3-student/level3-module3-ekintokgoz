@@ -20,7 +20,15 @@ public class _01_TheWave {
      */
     
     public static ArrayList<String> wave(String str) {
-        
+    	ArrayList <String> wave = new ArrayList <>();
+    	for(int i = 0; i < str.length(); i++) {
+    		if(str.charAt(i) == ' ') {
+    			continue;
+    		}
+        	StringBuilder builder = new StringBuilder(str);
+        	
+    	}
+    	
         return null;
     }
 }
