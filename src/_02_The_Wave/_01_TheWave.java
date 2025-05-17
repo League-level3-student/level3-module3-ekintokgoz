@@ -26,9 +26,10 @@ public class _01_TheWave {
     			continue;
     		}
         	StringBuilder builder = new StringBuilder(str);
-        	
+        	builder.setCharAt(i,Character.toUpperCase(str.charAt(i)));
+        	wave.add(builder.toString());
     	}
     	
-        return null;
+        return wave;
     }
 }
